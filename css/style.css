@@ -24,9 +24,10 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1.6rem;
   line-height: 2rem;
+  color: var(--dark);
 }
 
 h1,
@@ -35,13 +36,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Staatliches", sans-serif;
   margin: 1rem 0;
 }
 
 h3 {
   font-size: 1.8rem;
-  font-weight: 400;
 }
 
 p {
@@ -62,6 +61,15 @@ img {
   max-width: 100%;
 }
 
+hr {
+  border: 0;
+  border-bottom: 1px solid var(--gray);
+}
+
+/* ::placeholder {
+  color: var(--gray);
+} */
+
 /* utility */
 
 .container {
@@ -69,6 +77,7 @@ img {
   margin: auto;
   max-width: 1100px;
   height: 1500px;
+  padding: 0 1rem;
 }
 
 .text-primary {
@@ -102,6 +111,22 @@ img {
 .btn-light:hover {
   background: var(--primary);
   color: #fff;
+}
+
+.btn-dark {
+  background: var(--dark);
+  color: white;
+  border: 1px solid var(--dark);
+}
+
+.btn-dark:hover {
+  background: white;
+  color: var(--dark);
+}
+
+.mx-1 {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 /* generic */
@@ -195,4 +220,46 @@ nav {
 
 .article-small .text-hint {
   grid-column: span 2;
+}
+
+/* ads */
+
+.ads {
+  background: var(--gray-light);
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: 200px 1fr auto 1fr;
+  grid-template-rows: 1fr auto auto auto 1fr;
+  grid-template-areas:
+    "img . . ."
+    "img . h1 ."
+    "img . p ."
+    "img . form ."
+    "img . . .";
+}
+
+.ads img {
+  grid-area: img;
+}
+
+.ads h1 {
+  grid-area: h1;
+  font-size: 4rem;
+}
+
+.ads p {
+  grid-area: p;
+}
+
+.ads form {
+  grid-area: form;
+}
+
+.ads form input {
+  background: var(--gray-light);
+  border: 0;
+  border-bottom: 2px solid var(--gray-hint);
+  padding: 1rem 0;
+  margin-right: 1rem;
+  outline: 0;
 }
